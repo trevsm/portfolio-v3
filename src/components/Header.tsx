@@ -59,7 +59,7 @@ export const Header = () => {
           <Link to="#" onClick={() => setElement(Contact)}>
             Contact
           </Link>
-          <a href="/Trevor_Smith.pdf">Resume</a>
+          <a href="/portfolio-v3/Trevor_Smith.pdf">Resume</a>
         </div>
       </Nav>
     </>

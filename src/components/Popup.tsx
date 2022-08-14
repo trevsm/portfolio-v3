@@ -21,7 +21,6 @@ const Container = styled.div`
     min-height: 200px;
     max-width: 700px;
     padding: 30px;
-    width: 80vw;
     .close {
       font-size: 30px;
       position: absolute;

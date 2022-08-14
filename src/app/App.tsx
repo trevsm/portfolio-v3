@@ -1,14 +1,14 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {Routes, Route, HashRouter} from 'react-router-dom';
 import Home from '../pages/Home';
 import {projects} from '../projects';
 import ProjectTemplate from '../pages/ProjectTemplate';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="projects">
+        <Route path="/projects">
           {projects.map((project, index) => (
             <Route
               key={index}
@@ -18,7 +18,7 @@ function App() {
           ))}
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
