@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 import {Project} from '../types';
 import Page from '../templates/Page';
+import {Link} from 'react-router-dom';
+import {ArrowLeft, ArrowRight} from 'react-bootstrap-icons';
 
 const Main = styled.div`
   text-align: center;
-  margin: 80px 0;
+  margin-top: 40px;
   .buttons {
     margin-top: 70px;
     margin-bottom: 10px;
-  }
-  h1 {
-    text-decoration: underline;
   }
   h2 {
     max-width: 800px;
@@ -35,18 +34,54 @@ const Main = styled.div`
   }
 `;
 
-export default function ProjectTemplate(props: Project) {
+const ProjectLink = styled(Link)`
+  display: flex !important;
+  width: fit-content;
+  align-items: center;
+`;
+
+interface ProjectTemplateProps {
+  project: Project;
+  paths: {
+    prev: string | null;
+    next: string | null;
+  };
+}
+
+export default function ProjectTemplate({
+  project,
+  paths,
+}: ProjectTemplateProps) {
   return (
     <Page>
       <Main>
-        <h1>{props.title}</h1>
-        <h2>{props.subtitle}</h2>
-        <p>{props.description}</p>
-        <div className="buttons">
-          {props.live && <a href={props.live}>Visit Live</a>}
-          {props.source && <a href={props.source}>View Source</a>}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          {paths.prev && (
+            <ProjectLink to={'/projects/' + paths.prev}>
+              <ArrowLeft />
+              Prev
+            </ProjectLink>
+          )}{' '}
+          {paths.next && (
+            <ProjectLink to={'/projects/' + paths.next}>
+              Next
+              <ArrowRight />
+            </ProjectLink>
+          )}
         </div>
-        <img src={props.image.large} alt="" />
+        <h1>{project.title}</h1>
+        <h2>{project.subtitle}</h2>
+        <p>{project.description}</p>
+        <div className="buttons">
+          {project.live && <a href={project.live}>Visit Live</a>}
+          {project.source && <a href={project.source}>View Source</a>}
+        </div>
+        <img src={project.image.large} alt="" />
       </Main>
     </Page>
   );

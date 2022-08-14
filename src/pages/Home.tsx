@@ -109,7 +109,6 @@ export default function Home() {
       <p>
         I&apos;m a <b>Software Developer</b> @ LifeOmic
       </p>
-
       <Main>
         <div className="col">
           <h2>Current Projects</h2>
