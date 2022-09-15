@@ -48,7 +48,7 @@ export const projects: PageProject[] = [
       large: roomXL,
       small: room,
     },
-    live: 'https://myroom.dev/',
+    live: 'https://trevsm.github.io/3D-Portfolio/',
     source: 'https://github.com/trevsm/3D-Portfolio',
   },
   {
