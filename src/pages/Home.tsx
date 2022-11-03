@@ -107,7 +107,7 @@ export default function Home() {
         I&apos;m Trevor.
       </H1>
       <p>
-        I&apos;m a <b>Software Developer</b> @ LifeOmic
+        I&apos;m a <b>Software Developer
       </p>
       <Main>
         <div className="col">
